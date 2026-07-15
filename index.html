@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ariel | Bot de Economia para Discord</title>
+<meta name="description" content="Ariel é o bot de economia completo para o seu servidor Discord: trabalhe, invista, aposte no cassino, monte uma guilda, cuide do rancho e suba no ranking.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="noise-overlay" aria-hidden="true"></div>
+
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a href="#top" class="brand">
+      <!-- Troque o src abaixo pela URL da foto de perfil do Ariel -->
+      <img class="brand-avatar" src="https://placehold.co/96x96/0F1F35/00D4FF?text=A" alt="Foto de perfil do Ariel">
+      <span class="brand-name">Ariel</span>
+    </a>
+
+    <div class="topbar-actions">
+      <a class="btn btn-primary btn-small" href="#" id="invite-top">Adicionar ao Discord</a>
+      <button class="hamburger" id="menu-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="sidebar">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="sidebar-overlay" id="sidebar-overlay"></div>
+
+<aside class="sidebar" id="sidebar" aria-label="Navegação lateral">
+  <div class="sidebar-head">
+    <div class="sidebar-brand">
+      <img class="brand-avatar" src="https://placehold.co/96x96/0F1F35/00D4FF?text=A" alt="Foto de perfil do Ariel">
+      <span class="brand-name">Ariel</span>
+    </div>
+    <button class="sidebar-close" id="sidebar-close" aria-label="Fechar menu">✕</button>
+  </div>
+  <nav class="sidebar-nav">
+    <a href="#top" class="sidebar-link"><span class="sidebar-icon">🏠</span>Início</a>
+    <a href="#comandos" class="sidebar-link"><span class="sidebar-icon">📜</span>Comandos</a>
+    <a href="#economia" class="sidebar-link"><span class="sidebar-icon">💰</span>Economia</a>
+    <a href="#loja" class="sidebar-link"><span class="sidebar-icon">🛒</span>Loja</a>
+    <a href="#ranking" class="sidebar-link"><span class="sidebar-icon">📈</span>Ranking</a>
+    <a href="#guia" class="sidebar-link"><span class="sidebar-icon">📖</span>Guia</a>
+    <a href="#sobre" class="sidebar-link"><span class="sidebar-icon">ℹ️</span>Sobre</a>
+  </nav>
+  <div class="sidebar-foot">
+    <a href="#" class="btn btn-primary btn-small btn-block" id="invite-sidebar">Adicionar ao Discord</a>
+  </div>
+</aside>
+
+<main id="top">
+
+  <!-- ===================== HERO ===================== -->
+  <section class="hero">
+    <!-- Troque o src abaixo pela URL do banner do Ariel -->
+    <div class="hero-banner reveal">
+      <img src="https://placehold.co/1600x500/0F1F35/00D4FF?text=Ariel" alt="Banner do Ariel">
+    </div>
+
+    <div class="wrap hero-grid">
+      <div class="hero-copy reveal">
+        <p class="eyebrow">Bot de economia para Discord</p>
+        <h1 class="hero-title">Ariel</h1>
+        <p class="hero-sub-lead">O bot de economia completo para o seu servidor Discord.</p>
+        <p class="hero-sub">
+          Trabalhe, guarde e invista suas gems no banco, monte uma guilda, cuide do seu
+          rancho, teste a sorte no cassino e dispute o topo do ranking — tudo com o Ariel.
+        </p>
+
+        <p class="hero-status" id="sobre">
+          <span class="status-dot"></span>
+          <span>Online agora</span>
+          <span class="hero-status-sep">·</span>
+          <span>Economia, RPG e Diversão</span>
+          <span class="hero-status-sep">·</span>
+          <span>v1.0.0</span>
+        </p>
+
+        <div class="hero-actions">
+          <a href="#" class="btn btn-primary" id="invite-hero">Adicionar ao Discord</a>
+          <a href="#guia" class="btn btn-outline" id="docs-hero">Documentação</a>
+        </div>
+        <p class="hero-note">Grátis para usar · Slash commands · Sem anúncios</p>
+      </div>
+
+      <div class="hero-visual reveal" aria-hidden="true">
+        <div class="slot-machine">
+          <div class="slot-window">
+            <div class="reel" id="reel-1"><div class="reel-strip"></div></div>
+            <div class="reel" id="reel-2"><div class="reel-strip"></div></div>
+            <div class="reel" id="reel-3"><div class="reel-strip"></div></div>
+          </div>
+          <div class="slot-label">SALDO</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== RECURSOS ===================== -->
+  <section class="section" id="recursos">
+    <div class="wrap">
+      <p class="section-eyebrow reveal">O que o Ariel oferece</p>
+      <h2 class="section-title reveal">Um sistema completo de economia.</h2>
+      <p class="section-lede reveal">Tudo que o seu servidor precisa para uma economia divertida e balanceada.</p>
+
+      <div class="feature-grid">
+        <article class="feature-card reveal" style="--accent:#00D4FF">
+          <span class="feature-icon">💰</span>
+          <h3>Economia completa</h3>
+          <p>Carteira própria, Pix entre membros e recompensa diária em gems.</p>
+        </article>
+        <article class="feature-card reveal" style="--accent:#0099FF">
+          <span class="feature-icon">🏦</span>
+          <h3>Banco &amp; empréstimos</h3>
+          <p>Deposite, saque e peça empréstimos com prazo e juros no parcelamento.</p>
+        </article>
+        <article class="feature-card reveal" style="--accent:#66E6FF">
+          <span class="feature-icon">⚒️</span>
+          <h3>Empregos</h3>
+          <p>Escolha uma área, trabalhe e suba de nível para ganhar mais gems.</p>
+        </article>
+        <article class="feature-card reveal" style="--accent:#00D4FF">
+          <span class="feature-icon">🛒</span>
+          <h3>Loja &amp; inventário</h3>
+          <p>Compre, venda e presenteie itens exclusivos com outros membros.</p>
+        </article>
+        <article class="feature-card reveal" style="--accent:#0099FF">
+          <span class="feature-icon">📊</span>
+          <h3>Investimentos</h3>
+          <p>Aplique suas gems na bolsa de valores do servidor.</p>
+        </article>
+        <article class="feature-card reveal" style="--accent:#66E6FF">
+          <span class="feature-icon">🎰</span>
+          <h3>Cassino</h3>
+          <p>Coinflip, caça-níqueis e loteria para testar a sorte.</p>
+        </article>
+        <article class="feature-card reveal" style="--accent:#00D4FF">
+          <span class="feature-icon">⚔️</span>
+          <h3>RPG &amp; guildas</h3>
+          <p>Explore em busca de tesouros e crie uma guilda com seus amigos.</p>
+        </article>
+        <article class="feature-card reveal" style="--accent:#0099FF">
+          <span class="feature-icon">🏆</span>
+          <h3>Ranking</h3>
+          <p>Veja quem são os membros mais ricos do servidor.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== COMANDOS ===================== -->
+  <section class="section section-alt" id="comandos">
+    <div class="wrap">
+      <p class="section-eyebrow reveal">O que dá pra fazer</p>
+      <h2 class="section-title reveal">Comandos</h2>
+      <p class="section-lede reveal">As mesmas categorias do <code>/help</code> do bot, organizadas para você clicar e expandir.</p>
+
+      <div class="accordion">
+
+        <div class="acc-item reveal" style="--accent:#00D4FF">
+          <button class="acc-header" type="button" aria-expanded="false">
+            <span class="acc-icon">💼</span>
+            <span class="acc-title">Carreira e Ganhos</span>
+            <span class="acc-count">3</span>
+            <span class="acc-chevron">⌄</span>
+          </button>
+          <div class="acc-panel"><div class="acc-panel-inner">
+            <ul class="acc-list">
+              <li><code>/empregos</code><span>Veja e escolha um emprego disponível</span></li>
+              <li><code>/work</code><span>Trabalhe para ganhar gems</span></li>
+              <li><code>/daily</code><span>Resgate sua recompensa diária</span></li>
+            </ul>
+          </div></div>
+        </div>
+
+        <div class="acc-item reveal" id="economia" style="--accent:#0099FF">
+          <button class="acc-header" type="button" aria-expanded="false">
+            <span class="acc-icon">🏦</span>
+            <span class="acc-title">Banco e Economia</span>
+            <span class="acc-count">7</span>
+            <span class="acc-chevron">⌄</span>
+          </button>
+          <div class="acc-panel"><div class="acc-panel-inner">
+            <ul class="acc-list">
+              <li><code>/saldo</code><span>Veja sua carteira ou a de outro membro</span></li>
+              <li><code>/depositar</code><span>Guarde gems no banco</span></li>
+              <li><code>/sacar</code><span>Retire gems do banco</span></li>
+              <li><code>/pagar</code><span>Transfira gems para alguém</span></li>
+              <li><code>/emprestimo</code><span>Peça um empréstimo com prazo e juros</span></li>
+              <li><code>/pagar_emprestimo</code><span>Quite uma parcela ou o empréstimo todo</span></li>
+              <li id="ranking"><code>/ranking</code><span>Top 10 mais ricos do servidor</span></li>
+            </ul>
+          </div></div>
+        </div>
+
+        <div class="acc-item reveal" id="loja" style="--accent:#66E6FF">
+          <button class="acc-header" type="button" aria-expanded="false">
+            <span class="acc-icon">🛒</span>
+            <span class="acc-title">Mercado e Investimentos</span>
+            <span class="acc-count">6</span>
+            <span class="acc-chevron">⌄</span>
+          </button>
+          <div class="acc-panel"><div class="acc-panel-inner">
+            <ul class="acc-list">
+              <li><code>/loja</code><span>Veja os itens disponíveis</span></li>
+              <li><code>/comprar</code><span>Compre um item pelo ID</span></li>
+              <li><code>/vender</code><span>Venda um item de volta por metade do preço</span></li>
+              <li><code>/presentear</code><span>Doe um item para outro jogador</span></li>
+              <li><code>/inventario</code><span>Veja sua mochila</span></li>
+              <li><code>/investir</code><span>Aplique gems na bolsa de valores</span></li>
+            </ul>
+          </div></div>
+        </div>
+
+        <div class="acc-item reveal" style="--accent:#00D4FF">
+          <button class="acc-header" type="button" aria-expanded="false">
+            <span class="acc-icon">🎰</span>
+            <span class="acc-title">Cassino e Submundo</span>
+            <span class="acc-count">5</span>
+            <span class="acc-chevron">⌄</span>
+          </button>
+          <div class="acc-panel"><div class="acc-panel-inner">
+            <ul class="acc-list">
+              <li><code>/coinflip</code><span>Aposte no cara ou coroa</span></li>
+              <li><code>/slots</code><span>Aposte no caça-níqueis</span></li>
+              <li><code>/loteria</code><span>Bilhete instantâneo</span></li>
+              <li><code>/crime</code><span>Tente um golpe arriscado para lucro rápido</span></li>
+              <li><code>/roubar</code><span>Tente roubar gems de outro jogador</span></li>
+            </ul>
+          </div></div>
+        </div>
+
+        <div class="acc-item reveal" style="--accent:#0099FF">
+          <button class="acc-header" type="button" aria-expanded="false">
+            <span class="acc-icon">🎮</span>
+            <span class="acc-title">Minijogos e Diversão</span>
+            <span class="acc-count">8</span>
+            <span class="acc-chevron">⌄</span>
+          </button>
+          <div class="acc-panel"><div class="acc-panel-inner">
+            <ul class="acc-list">
+              <li><code>/blackjack</code><span>21 contra o dealer</span></li>
+              <li><code>/forca</code><span>Adivinhe a palavra secreta</span></li>
+              <li><code>/velha</code><span>Desafie um amigo no jogo da velha</span></li>
+              <li><code>/ppt</code><span>Pedra, papel e tesoura contra um amigo</span></li>
+              <li><code>/quiz</code><span>Responda perguntas e ganhe gems</span></li>
+              <li><code>/adivinhar</code><span>Adivinhe o número secreto de 1 a 100</span></li>
+              <li><code>/cofre</code><span>Descubra a senha secreta do servidor</span></li>
+              <li><code>/duelo</code><span>Combate por turnos, com aposta opcional</span></li>
+            </ul>
+          </div></div>
+        </div>
+
+        <div class="acc-item reveal" style="--accent:#66E6FF">
+          <button class="acc-header" type="button" aria-expanded="false">
+            <span class="acc-icon">⚔️</span>
+            <span class="acc-title">RPG e Aventura</span>
+            <span class="acc-count">3</span>
+            <span class="acc-chevron">⌄</span>
+          </button>
+          <div class="acc-panel"><div class="acc-panel-inner">
+            <ul class="acc-list">
+              <li><code>/explorar</code><span>Saia em uma aventura e busque tesouros</span></li>
+              <li><code>/guild</code><span>Painel de controle da sua guilda</span></li>
+              <li><code>/rancho</code><span>Gerencie sua fazenda</span></li>
+            </ul>
+          </div></div>
+        </div>
+
+        <div class="acc-item reveal" style="--accent:#00D4FF">
+          <button class="acc-header" type="button" aria-expanded="false">
+            <span class="acc-icon">💞</span>
+            <span class="acc-title">Social</span>
+            <span class="acc-count">1</span>
+            <span class="acc-chevron">⌄</span>
+          </button>
+          <div class="acc-panel"><div class="acc-panel-inner">
+            <ul class="acc-list">
+              <li><code>/casar</code><span>Peça alguém em casamento</span></li>
+            </ul>
+          </div></div>
+        </div>
+
+        <div class="acc-item reveal" style="--accent:#0099FF">
+          <button class="acc-header" type="button" aria-expanded="false">
+            <span class="acc-icon">⚙️</span>
+            <span class="acc-title">Utilitários</span>
+            <span class="acc-count">5</span>
+            <span class="acc-chevron">⌄</span>
+          </button>
+          <div class="acc-panel"><div class="acc-panel-inner">
+            <ul class="acc-list">
+              <li><code>/perfil</code><span>Veja seu cartão de visita ou o de outro membro</span></li>
+              <li><code>/avatar</code><span>Veja o avatar de um usuário em alta resolução</span></li>
+              <li><code>/userinfo</code><span>Informações detalhadas de um membro</span></li>
+              <li><code>/serverinfo</code><span>Estatísticas do servidor</span></li>
+              <li><code>/cooldowns</code><span>Veja o tempo de espera dos seus comandos</span></li>
+            </ul>
+          </div></div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== GUIA ===================== -->
+  <section class="section" id="guia">
+    <div class="wrap">
+      <p class="section-eyebrow reveal">Guia rápido</p>
+      <h2 class="section-title reveal">Como jogar com o Ariel.</h2>
+      <p class="section-lede reveal">Do primeiro comando ao topo do ranking.</p>
+
+      <div class="feature-list">
+
+        <article class="feature-row reveal">
+          <div class="feature-num" style="--accent:#00D4FF">01</div>
+          <div class="feature-body">
+            <h3>Como ganhar moedas</h3>
+            <p>Use <code>/daily</code> uma vez por dia para resgatar sua recompensa e
+            <code>/work</code> sempre que o cooldown liberar. Pequenas ações somadas geram
+            um saldo consistente.</p>
+          </div>
+        </article>
+
+        <article class="feature-row reveal">
+          <div class="feature-num" style="--accent:#0099FF">02</div>
+          <div class="feature-body">
+            <h3>Como trabalhar</h3>
+            <p>Escolha uma área com <code>/empregos</code> — sem emprego, o <code>/work</code>
+            não libera. Depois é só rodar <code>/work</code> a cada hora para faturar gems.</p>
+          </div>
+        </article>
+
+        <article class="feature-row reveal">
+          <div class="feature-num" style="--accent:#66E6FF">03</div>
+          <div class="feature-body">
+            <h3>Como comprar itens</h3>
+            <p>Confira o catálogo com <code>/loja</code> e finalize com <code>/comprar</code>.
+            Os itens vão direto para o <code>/inventario</code>, e dá pra vender ou presentear
+            depois.</p>
+          </div>
+        </article>
+
+        <article class="feature-row reveal">
+          <div class="feature-num" style="--accent:#00D4FF">04</div>
+          <div class="feature-body">
+            <h3>Como evoluir</h3>
+            <p>Guarde suas gems com <code>/depositar</code>, aplique na bolsa com
+            <code>/investir</code> e monte uma guilda com <code>/guild</code> para crescer junto
+            com o servidor.</p>
+          </div>
+        </article>
+
+        <article class="feature-row reveal">
+          <div class="feature-num" style="--accent:#0099FF">05</div>
+          <div class="feature-body">
+            <h3>Como subir no ranking</h3>
+            <p>Quanto mais gems você acumular entre carteira e banco, mais alto aparece em
+            <code>/ranking</code>. Consistência vale mais que sorte.</p>
+          </div>
+        </article>
+
+      </div>
+
+      <div class="cta-final reveal">
+        <a href="#" class="btn btn-primary btn-large" id="invite-bottom">Adicionar ao Discord agora</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="wrap footer-inner">
+    <div class="brand brand-footer">
+      <img class="brand-avatar brand-avatar-sm" src="https://placehold.co/96x96/0F1F35/00D4FF?text=A" alt="Foto de perfil do Ariel">
+      <span class="brand-name">Ariel</span>
+    </div>
+    <p class="footer-note">Feito para servidores que gostam de uma boa economia. Sem anúncios, sem taxa.</p>
+    <p class="footer-copy">© 2026 Ariel Bot.</p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
